@@ -1,5 +1,22 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <form @submit.prevent="fetchMetar">
+    <input type="text" v-model="icaoCode" placeholder="icao code" />
+  </form>
 </template>
+
+<script>
+import MetarService from '@/services/MetarService.js'
+
+export default {
+  data() {
+    return {
+      icaoCode: null
+    }
+  },
+  methods: {
+    fetchMetar() {
+      MetarService.getMetar(this.icaoCode)
+    }
+  }
+}
+</script>
