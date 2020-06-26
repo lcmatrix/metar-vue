@@ -1,5 +1,8 @@
 # metar
 
+## Description
+Coming soon...
+
 ## Project setup
 ```
 npm install
